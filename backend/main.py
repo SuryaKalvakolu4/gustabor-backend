@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from backend.api import feedback
+from api import feedback
 
 from . import models, database
 from .api import patient, query
