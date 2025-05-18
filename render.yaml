@@ -1,15 +1,12 @@
 services:
   - type: web
-    name: gustabor
+    name: gustabor-backend
+    runtime: python
     env: python
+    region: oregon
     plan: free
-    buildCommand: ""                     # No build needed
-    startCommand: ./start.sh             # Custom script to run FastAPI
-    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash start.sh
     envVars:
-      - key: OPENAI_API_KEY              # Secure API key
-        sync: false                      # Set via Render dashboard
-      - key: PYTHON_VERSION
-        value: 3.11.11
-      - key: PORT
-        value: 10000                     # Required by Render's Uvicorn service
+      - key: OPENAI_API_KEY
+        sync: false  # You will set this manually in the Render dashboard
