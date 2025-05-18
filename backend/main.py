@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from api import feedback
+from backend.api import feedback
 
-from . import models, database
-from .api import patient, query
+from bckend import models, database
+from backend.api import patient, query
 
 # Load environment variables from .env (for OpenAI API key)
 load_dotenv()
