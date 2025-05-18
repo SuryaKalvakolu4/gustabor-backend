@@ -21,7 +21,7 @@ app = FastAPI(
 # CORS settings for local frontend (adjust origin in prod)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Use ["http://localhost:8080"] for stricter config
+    allow_origins=["https://gustabor-recommendation-project.onrender.com"],  # Use ["http://localhost:8080"] for stricter config
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
