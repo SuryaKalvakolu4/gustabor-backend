@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from .. import models, schemas, llm_recommender
-from ..database import SessionLocal, engine
+from backend import models, schemas, llm_recommender
+from backend.database import SessionLocal, engine
 
 router = APIRouter()
 
