@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: gustabor
+    env: python
+    plan: free
+    buildCommand: ""                     # No build needed
+    startCommand: ./start.sh             # Custom script to run FastAPI
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY              # Secure API key
+        sync: false                      # Set via Render dashboard
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: PORT
+        value: 10000                     # Required by Render's Uvicorn service
